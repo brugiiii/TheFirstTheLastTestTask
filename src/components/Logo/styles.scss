@@ -1,0 +1,40 @@
+.icon-logo {
+    aspect-ratio: 1 / calc(1.58588 / 2.86863);
+    width: clamp(2.869rem, 1.504rem + 5.82vw, 4.299rem);
+
+    @media screen and (min-width: 1024px) {
+        width: clamp(4.299rem, 2.071rem + 3.48vw, 5.204rem);
+    }
+}
+
+.fill {
+    animation-name: fillAction;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+#waveShape {
+    animation-name: waveAction;
+    animation-iteration-count: 8;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    fill: var(--black-color);
+}
+@keyframes fillAction {
+    0% {
+        transform: translate(0, 50px);
+    }
+    100% {
+        transform: translate(0, -5px);
+    }
+}
+@keyframes waveAction {
+    0% {
+        transform: translate(-150px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

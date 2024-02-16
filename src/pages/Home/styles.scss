@@ -1,0 +1,39 @@
+.hero {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    & .container {
+        padding: 0 clamp(1.31rem, -3.404rem + 20.11vw, 6.25rem);
+
+        @media screen and (min-width: 768px) {
+            padding: 0 clamp(6.25rem, -3.125rem + 19.53vw, 9.375rem);
+        }
+
+        @media screen and (min-width: 1024px){
+            padding: 0 clamp(9.375rem, 0.452rem + 13.94vw, 13rem);
+        }
+    }
+}
+
+.hero-title {
+    margin: 0;
+
+    text-align: center;
+    font-size: clamp(2.125rem, 0.694rem + 6.11vw, 3.625rem);
+    font-weight: 700;
+    line-height: calc(2.3375 / 2.125);
+    text-transform: uppercase;
+
+    @media screen and (min-width: 1024px) {
+        font-size: clamp(3.625rem, -0.067rem + 5.77vw, 5.125rem);
+    }
+}

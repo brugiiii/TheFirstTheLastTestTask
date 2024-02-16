@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Grtsk Giga';
+    src: local('Grtsk Giga Semibold'), local('Grtsk-Giga-Semibold'),
+    url('./fonts/GrtskGiga-Semibold.woff2') format('woff2'),
+    url('./fonts/GrtskGiga-Semibold.woff') format('woff'),
+    url('./fonts/GrtskGiga-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grtsk Giga';
+    src: local('Grtsk Giga Bold'), local('Grtsk-Giga-Bold'),
+    url('./fonts/GrtskGiga-Bold.woff2') format('woff2'),
+    url('./fonts/GrtskGiga-Bold.woff') format('woff'),
+    url('./fonts/GrtskGiga-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Body Grotesque';
+    src: local('Body Grotesque Regular'), local('Body-Grotesque-Regular'),
+    url('./fonts/BodyGrotesque-Regular.woff2') format('woff2'),
+    url('./fonts/BodyGrotesque-Regular.woff') format('woff'),
+    url('./fonts/BodyGrotesque-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grtsk Giga';
+    src: local('Grtsk Giga Bold Italic'), local('Grtsk-Giga-Bold-Italic'),
+    url('./fonts/GrtskGiga-BoldItalic.woff2') format('woff2'),
+    url('./fonts/GrtskGiga-BoldItalic.woff') format('woff'),
+    url('./fonts/GrtskGiga-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+:root {
+    --primary-text-color: #373737;
+    --primary-bg-color: #BEBEBE;
+
+    --ellipse-bg-color: #FFCB46;
+
+    --white-color: #FFF;
+    --black-color: #000;
+
+    --duration: 250ms;
+    --timing-function: ease-in-out;
+}
+
+html {
+    box-sizing: border-box;
+
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+
+    font-family: "Grtsk Giga", sans-serif;
+    font-size: clamp(0.875rem, 0.567rem + 0.48vw, 1rem);
+    line-height: 1.4;
+
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+}
+
+.container {
+    max-width: 90rem;
+
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    @media screen and (min-width: 1024px) {
+        padding: 0 clamp(1.063rem, -0.014rem + 1.68vw, 1.5rem);
+    }
+}
+
+.slide-in,
+.slide-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--ellipse-bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-in {
+    transform-origin: left;
+}
+
+.slide-out {
+    transform-origin: right;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.horizontal-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

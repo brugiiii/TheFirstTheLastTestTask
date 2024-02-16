@@ -1,0 +1,35 @@
+.languages-wrapper,
+.languages-list {
+    display: flex;
+
+    gap: 0.5rem;
+}
+
+.languages-wrapper {
+    left: 0;
+}
+
+.languages-list {
+    align-items: center;
+}
+
+.language-switcher {
+    all: unset;
+
+    padding: clamp(0.5rem, 0.346rem + 0.24vw, 0.563rem) clamp(0.563rem, 0.409rem + 0.24vw, 0.625rem) clamp(0.25rem, -0.058rem + 0.48vw, 0.375rem) clamp(0.563rem, 0.255rem + 0.48vw, 0.688rem);
+
+    border: 1px solid #ffffff1f;
+    border-radius: 50%;
+
+    font-family: 'Body Grotesque', sans-serif;
+    font-size: clamp(0.875rem, 0.721rem + 0.24vw, 0.938rem);
+    letter-spacing: clamp(0.087rem, 0.072rem + 0.02vw, 0.094rem);
+
+    cursor: pointer;
+    background-color: var(--primary-bg-color);
+}
+
+.languages-list__item {
+    position: relative;
+    z-index: -1;
+}

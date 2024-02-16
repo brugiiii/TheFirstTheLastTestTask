@@ -1,0 +1,83 @@
+.marquee {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+
+    transform: translate(-50%, -50%);
+    transform-origin: left;
+    rotate: -57deg;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    width: 200%;
+
+    @media screen and (min-width: 768px) {
+        rotate: -53.198deg;
+    }
+
+    @media screen and (min-width: 1024px) {
+        rotate: -36.608deg;
+    }
+
+    @media screen and (min-width: 1440px) {
+        rotate: -30deg;
+    }
+}
+
+.marquee__line {
+    display: flex;
+
+    &.above {
+        rotate: 180deg;
+    }
+}
+
+.marquee__text {
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+    white-space: nowrap;
+    -webkit-text-stroke: 1px var(--primary-text-color);
+    text-stroke: 1px var(--primary-text-color);
+    font-size: clamp(1.75rem, 0.915rem + 3.56vw, 2.625rem);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+
+    opacity: 0.1;
+    color: transparent;
+
+    animation: animate-first-screen 40s -40s linear infinite;
+    will-change: transform;
+
+    @media screen and (min-width: 1024px) {
+        font-size: clamp(2.625rem, 1.087rem + 2.4vw, 3.25rem);
+    }
+
+    &:nth-child(2){
+        animation: animate-second-screen 40s -20s linear infinite;
+    }
+}
+
+@keyframes animate-first-screen {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes animate-second-screen {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
